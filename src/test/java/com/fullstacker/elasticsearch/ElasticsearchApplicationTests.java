@@ -40,8 +40,9 @@ public class ElasticsearchApplicationTests {
     }
 
     @Test
-    public  void strSplitTest(){
-
+    public  void testFindById(){
+        Customer custormerById = customerService.findCustormerById("1245");
+        System.out.println(custormerById);
     }
 }
 
