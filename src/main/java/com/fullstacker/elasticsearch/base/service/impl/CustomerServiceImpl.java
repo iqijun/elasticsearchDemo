@@ -78,6 +78,7 @@ public class CustomerServiceImpl implements CustomerService {
                 .withIndices("es-customer")
 //                .withQuery(boolQueryBuilder)
                 .withFilter(boolQueryBuilder)
+                .withFilter(rangeQuery("23").lte(12))
                 .withPageable(PageRequest.of(start,raws))
                 .build();
         return elasticsearchTemplate.queryForPage(searchQuery,Customer.class);
@@ -90,11 +91,13 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public int deleteById(String id) {
+        custormerRepository.deleteById(id);
         return 0;
     }
 
     @Override
     public int deleteByExample(Customer example) {
+        custormerRepository.delete(example);
         return 0;
     }
 }
