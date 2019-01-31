@@ -3,8 +3,9 @@ package com.fullstacker.elasticsearch.base;
 
 import com.fullstacker.elasticsearch.base.pojo.Customer;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @program: elasticsearch
@@ -14,5 +15,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface CustormerRepository extends ElasticsearchRepository<Customer,String> {
+
+    public List<Customer>  findByAgeBetween(int min,int max);
+
+    public List<Customer> findCustomerByAgeGreaterThanEqual(int age);
+
+    List<Customer> findCustomerByFirstNameContains(String name);
+
+
 
 }

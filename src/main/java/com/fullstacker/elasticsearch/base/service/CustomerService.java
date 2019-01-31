@@ -21,13 +21,21 @@ public interface CustomerService{
      * @since 1.0
     */
     public Customer findCustormerById(String id);
-    /**
+  /*  *//**
      * <p>功能描述：根据customer相关字段查询</p>
     * @author: xingguishuai
     * @Date: 2019/1/30 18:11
      * @since 1.0
+    *//*
+    public List<Customer> findCustormerByExmple(Customer example);*/
+
+    /**
+     * <p>功能描述：根据年龄范围查询</p>
+    * @author: xingguishuai
+    * @Date: 2019/1/31 10:51
+     * @since 1.0
     */
-    public List<Customer> findCustormerByExmple(Customer example);
+    public List<Customer> findByAgeRange(int min,int max);
     /**
      * <p>功能描述：分页查询</p>
     * @author: xingguishuai
@@ -36,13 +44,13 @@ public interface CustomerService{
     */
     public Page<Customer> findByPage(Customer example,int start,int raws);
 
-    /**
+  /*  *//**
      * <p>功能描述：将符合example条件的数据更新为result/p>
     * @author: xingguishuai
     * @Date: 2019/1/30 18:14
      * @since 1.0
-    */
-    public int updateByExample(Customer example,Customer result);
+    *//*
+    public int updateByExample(Customer example,Customer result);*/
     /**
      * <p>功能描述：根据id删除</p>
     * @author: xingguishuai
